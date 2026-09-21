@@ -46,6 +46,7 @@ const productOptions = [
 
 export function ContactSection() {
   const [submitted, setSubmitted] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   const {
     register,
@@ -61,11 +62,29 @@ export function ContactSection() {
   const selectedProduct = watch('product');
 
   const onSubmit = async (data: FormData) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log('Form submitted:', data);
-    setSubmitted(true);
-    reset();
-    setTimeout(() => setSubmitted(false), 5000);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error ?? 'Failed to submit form');
+      }
+
+      setSubmitted(true);
+      reset();
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error ? error.message : 'Something went wrong. Please try again.'
+      );
+    }
   };
 
   return (
@@ -145,7 +164,7 @@ export function ContactSection() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" placeholder="+91 98765 43210" {...register('phone')} className="mt-1.5" />
+                    <Input id="phone" placeholder="+977 9841543210" {...register('phone')} className="mt-1.5" />
                     {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone.message}</p>}
                   </div>
                   <div>
@@ -186,6 +205,10 @@ export function ContactSection() {
                   />
                   {errors.message && <p className="text-xs text-destructive mt-1">{errors.message.message}</p>}
                 </div>
+
+                {submitError && (
+                  <p className="text-sm text-destructive text-center">{submitError}</p>
+                )}
 
                 <Button
                   type="submit"

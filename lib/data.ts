@@ -49,6 +49,7 @@ import {
     icon: LucideIcon;
     gradient: string;
     featured?: boolean;
+    link?: string; // Optional link for the product
   };
   
   export const products: Product[] = [
@@ -61,6 +62,8 @@ import {
       icon: Briefcase,
       gradient: 'from-blue-500 to-cyan-500',
       featured: true,
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
+      
     },
     {
       id: 'school-erp',
@@ -71,6 +74,7 @@ import {
       icon: GraduationCap,
       gradient: 'from-violet-500 to-purple-500',
       featured: true,
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'clinical-lab',
@@ -81,6 +85,7 @@ import {
       icon: FlaskConical,
       gradient: 'from-rose-500 to-pink-500',
       featured: true,
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'fruit-veg-erp',
@@ -90,6 +95,7 @@ import {
       features: ['Batch Tracking', 'Quality Control', 'Cold Chain', 'Supplier Management', 'Wastage Reports'],
       icon: Apple,
       gradient: 'from-green-500 to-emerald-500',
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'dairy-erp',
@@ -99,6 +105,7 @@ import {
       features: ['Milk Collection', 'Route Management', 'Quality Testing', 'Farmer Payments', 'Dispatch'],
       icon: Milk,
       gradient: 'from-amber-500 to-orange-500',
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'library-mgmt',
@@ -108,6 +115,7 @@ import {
       features: ['Cataloging', 'Circulation', 'Member Management', 'Fine Tracking', 'OPAC'],
       icon: BookOpen,
       gradient: 'from-indigo-500 to-blue-500',
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'institute-mgmt',
@@ -117,6 +125,7 @@ import {
       features: ['Batch Management', 'Fee Tracking', 'Attendance', 'Faculty Scheduling', 'Online Tests'],
       icon: Building2,
       gradient: 'from-teal-500 to-cyan-500',
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'shuttering-erp',
@@ -126,6 +135,7 @@ import {
       features: ['Material Tracking', 'Rental Billing', 'Return Management', 'Site Reports', 'Stock Ledger'],
       icon: HardHat,
       gradient: 'from-orange-500 to-red-500',
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'courier-software',
@@ -135,6 +145,7 @@ import {
       features: ['Booking & Tracking', 'Route Optimization', 'Delivery Proof', 'COD Management', 'Branch Network'],
       icon: Truck,
       gradient: 'from-sky-500 to-blue-500',
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'dry-cleaning',
@@ -144,6 +155,7 @@ import {
       features: ['Order Tracking', 'Pickup & Delivery', 'Customer CRM', 'Invoice & Billing', 'SMS Alerts'],
       icon: Shirt,
       gradient: 'from-purple-500 to-pink-500',
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
     {
       id: 'billing-software',
@@ -154,6 +166,7 @@ import {
       icon: Receipt,
       gradient: 'from-cyan-500 to-teal-500',
       featured: true,
+      link: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=solversolutions@gmail.com',
     },
   ];
   
@@ -210,40 +223,44 @@ import {
     icon: LucideIcon;
     gradient: string;
     features: string[];
+    link?: string;
   };
   
   export const mobileApps: MobileApp[] = [
     {
-      id: 'business-app',
-      name: 'Business App',
-      description: 'Manage your entire business operations on the go with real-time dashboards.',
-      icon: Briefcase,
-      gradient: 'from-blue-500 to-cyan-500',
-      features: ['Sales Dashboard', 'Inventory Check', 'Invoice Creation', 'Reports', 'Multi-Branch'],
-    },
-    {
-      id: 'school-app',
-      name: 'School App',
-      description: 'Connect parents, teachers, and students with real-time updates and notifications.',
+      id: 'skoolai-app',
+      name: 'Skoolai App',
+      description: 'Manage your entire school operations on the go with real-time dashboards.',
       icon: School,
+      gradient: 'from-blue-500 to-cyan-500',
+      features: ['Students Dashboard', 'Student Check', 'Invoice Creation', 'Reports', 'Multi-Branch'],
+      link: 'https://play.google.com/store/apps/details?id=com.skoolai.solver',
+    },
+    {
+      id: 'farata-app',
+      name: 'farata App',
+      description: 'Bill numbering, new home dashboard, profit and stock reports, and more for your business in your pocket.',
+      icon: Briefcase,
       gradient: 'from-violet-500 to-purple-500',
-      features: ['Attendance', 'Exam Results', 'Fee Payments', 'Homework', 'Notices'],
+      features: ['Bill numbering', 'new home dashboard', 'profit and stock reports','POS customers detail'],
+      link: 'https://play.google.com/store/apps/details?id=com.solver.farata2.apk',
     },
+    // {
+    //   id: 'restaurant-app',
+    //   name: 'Restaurant App',
+    //   description: 'Take orders, manage tables, and track kitchen orders from your phone.',
+    //   icon: Utensils,
+    //   gradient: 'from-orange-500 to-red-500',
+    //   features: ['Table Orders', 'Menu Management', 'KOT', 'Bill Settlement', 'Delivery Tracking'],
+    // },
     {
-      id: 'restaurant-app',
-      name: 'Restaurant App',
-      description: 'Take orders, manage tables, and track kitchen orders from your phone.',
-      icon: Utensils,
-      gradient: 'from-orange-500 to-red-500',
-      features: ['Table Orders', 'Menu Management', 'KOT', 'Bill Settlement', 'Delivery Tracking'],
-    },
-    {
-      id: 'market-app',
-      name: 'Market App',
+      id: 'Red_apple-app',
+      name: 'Red Apple App',
       description: 'Run your retail store with quick billing and stock management anywhere.',
       icon: ShoppingBag,
       gradient: 'from-green-500 to-emerald-500',
-      features: ['Quick Billing', 'Stock Updates', 'Customer Loyalty', 'Daily Reports', 'Barcode Scan'],
+      features: ['Quick Billing', 'Stock Updates', 'find traders', 'Daily Updates', 'Barcode Scan'],
+      link: 'https://play.google.com/store/apps/details?id=com.redapple11.mandiratesapp',
     },
   ];
   
@@ -338,23 +355,23 @@ import {
   
   export const testimonials: Testimonial[] = [
     {
-      name: 'Rajesh Kumar',
+      name: 'Shamsher Kathariya',
       role: 'Managing Director',
-      company: 'Sharma Traders',
+      company: 'Kathariya Traders',
       content: 'Solver ERP transformed our entire operation. Inventory management that used to take days now happens in real-time. The ROI was visible within the first month.',
       rating: 5,
       avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150',
     },
     {
-      name: 'Priya Sharma',
+      name: 'Siya Shrestha',
       role: 'Principal',
-      company: 'Greenwood International School',
+      company: 'St. xaviers International School',
       content: 'The School ERP has been a game-changer for us. Parents love the real-time updates, and our administrative workload has dropped by 70%. Absolutely recommended.',
       rating: 5,
       avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
     },
     {
-      name: 'Dr. Amit Patel',
+      name: 'Dr. Rasik Shah',
       role: 'Lab Director',
       company: 'MediLab Diagnostics',
       content: 'From sample collection to report delivery, everything is seamless now. The barcode tracking and automated reporting have eliminated errors completely.',
@@ -362,7 +379,7 @@ import {
       avatar: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150',
     },
     {
-      name: 'Sunita Reddy',
+      name: 'Sunita kuikel',
       role: 'CEO',
       company: 'FreshMart Supermarket',
       content: 'The billing software is incredibly fast. We process 500+ bills a day with zero downtime. The GST compliance features alone have saved us countless hours.',
@@ -388,8 +405,8 @@ import {
   ];
   
   export const clientLogos = [
-    'Sharma Traders',
-    'Greenwood School',
+    'Kathariya Traders',
+    'St. xaviers International School',
     'MediLab',
     'FreshMart',
     'Speed Courier',
@@ -413,3 +430,34 @@ import {
     { label: 'Contact', href: '#contact' },
   ];
   
+  // export const footerLinks = [
+  //   { label: 'School ERP', href: '#products' },
+  //   { label: 'Business ERP', href: '#products' },
+  //   { label: 'Billing Software', href: '#products' },
+  //   { label: 'Clinical labs', href: '#products' },
+  //   { label: 'Courier Software', href: '#products' },
+  //   { label: 'Dairy ERP', href: '#products' },
+  //   { label: 'Inventory Management', href: '#features' },
+  //   { label: 'Accounting', href: '#features' },
+  //   { label: 'CRM', href: '#features' },
+  //   { label: 'HR & Payroll', href: '#features' },
+  //   { label: 'Reports', href: '#features' },
+  //   { label: 'Multi-Branch', href: '#features' },
+  //   { label: 'About Us', href: '#why-us' },
+  //   { label: 'Testimonials', href: '#testimonials' },
+  //   { label: 'Industries', href: '#industries' },
+  //   { label: 'Mobile Apps', href: '#apps' },
+  //   //{ label: 'Marketing Tools', href: '#features' },
+  //   { label: 'Contact', href: '#contact' },
+  // ];
+  //   export const footerLinks :  [
+  // {
+  //     id: 'Red_apple-app',
+  //     name: 'Red Apple App',
+  //     description: 'Run your retail store with quick billing and stock management anywhere.',
+  //     icon: ShoppingBag,
+  //     gradient: 'from-green-500 to-emerald-500',
+  //     features: ['Quick Billing', 'Stock Updates', 'find traders', 'Daily Updates', 'Barcode Scan'],
+  //     link: 'https://play.google.com/store/apps/details?id=com.redapple11.mandiratesapp',
+  //   },
+  // ];

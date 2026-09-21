@@ -139,15 +139,35 @@ function ProductCard({ product }: { product: Product }) {
         </ul>
 
         {/* Actions */}
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm" className="flex-1 rounded-full group/btn">
+        <div className="flex justify-center gap-3">
+          {/* <Button variant="outline" size="sm" className="flex-1 rounded-full group/btn">
             Learn More
             <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-          </Button>
-          <Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-accent text-white">
-            <Download className="w-4 h-4 mr-1" />
-            Download
-          </Button>
+          </Button> */}
+          {product.link ? (
+            // asChild makes the <Button> render its child <a> directly instead of
+            // wrapping it in a <button>, so the real navigation element (the <a>
+            // with a real href) is what actually receives the click.
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full bg-gradient-to-r from-primary to-accent text-white"
+            >
+              <a href={product.link} target="_blank" rel="noopener noreferrer">
+                Contact Us
+              </a>
+            </Button>
+          ) : (
+            // No link configured for this product — disable rather than
+            // render a button that silently does nothing when clicked.
+            <Button
+              size="sm"
+              disabled
+              className="rounded-full bg-gradient-to-r from-primary to-accent text-white opacity-50 cursor-not-allowed"
+            >
+              Contact Us
+            </Button>
+          )}
         </div>
       </div>
     </motion.div>

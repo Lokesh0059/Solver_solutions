@@ -2,14 +2,23 @@
 -- Run this in the Supabase SQL Editor to create all tables.
 
 -- Product categories
-CREATE TYPE product_category AS ENUM (
-  'Business',
-  'Education',
-  'Healthcare',
-  'Industry',
-  'Retail',
-  'Services'
-);
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_type
+        WHERE typname = 'product_category'
+    ) THEN
+        CREATE TYPE product_category AS ENUM (
+            'Business',
+            'Education',
+            'Healthcare',
+            'Industry',
+            'Retail',
+            'Services'
+        );
+    END IF;
+END $$;
 
 -- Products
 CREATE TABLE IF NOT EXISTS products (
@@ -155,17 +164,28 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS products_updated_at ON products;
+
 CREATE TRIGGER products_updated_at
   BEFORE UPDATE ON products
-  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();DROP TRIGGER IF EXISTS products_updated_at ON products;
+
+
+DROP TRIGGER IF EXISTS marketing_tools_updated_at ON marketing_tools;
 
 CREATE TRIGGER marketing_tools_updated_at
   BEFORE UPDATE ON marketing_tools
-  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+DROP TRIGGER IF EXISTS mobile_apps_updated_at ON mobile_apps;
 
 CREATE TRIGGER mobile_apps_updated_at
   BEFORE UPDATE ON mobile_apps
-  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
 
 -- Row Level Security (public read for content tables)
 ALTER TABLE products ENABLE ROW LEVEL SECURITY;

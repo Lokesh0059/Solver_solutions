@@ -44,7 +44,7 @@ export function Hero() {
 
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 text-balance">
               All-in-one ERP software for every industry. Manage inventory, billing, accounting,
-              and operations with real-time insights — trusted by 500,000+ businesses worldwide.
+              and operations with real-time insights — trusted by 50,000+ businesses worldwide.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -124,7 +124,7 @@ function DashboardMockup() {
         {/* Stats row */}
         <div className="grid grid-cols-3 gap-3 mb-4">
           {[
-            { icon: DollarSign, label: 'Revenue', value: '₹4.2L', color: 'text-green-500', bg: 'bg-green-500/10' },
+            { icon: DollarSign, label: 'Revenue', value: 'रु4.2L', color: 'text-green-500', bg: 'bg-green-500/10' },
             { icon: Users, label: 'Customers', value: '12,450', color: 'text-blue-500', bg: 'bg-blue-500/10' },
             { icon: TrendingUp, label: 'Growth', value: '+24%', color: 'text-accent', bg: 'bg-accent/10' },
           ].map((item, i) => (
@@ -177,7 +177,7 @@ function DashboardMockup() {
           </div>
           <div>
             <p className="text-xs text-muted-foreground">Monthly Revenue</p>
-            <p className="font-bold text-foreground">₹4,20,500</p>
+            <p className="font-bold text-foreground">रु4,20,500</p>
           </div>
         </div>
       </motion.div>

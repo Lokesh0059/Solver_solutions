@@ -9,8 +9,8 @@ import { cn } from '@/lib/utils';
 
 export function MobileApps() {
   return (
-    <section id="apps" className="section-padding relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+    <section id="apps" className=" section-padding relative overflow-hidden">
+      <div className=" absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
 
       <div className="container-max px-4 sm:px-6 lg:px-8 relative">
@@ -31,7 +31,7 @@ export function MobileApps() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-6">
           {mobileApps.map((app, i) => (
             <motion.div
               key={app.id}
@@ -80,13 +80,25 @@ export function MobileApps() {
                 </div>
 
                 {/* Google Play button */}
-                <Button size="sm" className="w-full rounded-full bg-foreground text-background hover:bg-foreground/90 group/btn">
-                  <svg className="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.29-.712V2.526c0-.265.105-.521.29-.712zM14.5 12.708L17.25 15.46l-12.5 7.062L14.5 12.708zm0-1.416L4.75 3.478l12.5 7.062-2.75 2.752zM18.25 8.75l-2.75 2.75L18.25 14.25l3-1.69c.5-.28.5-1.01 0-1.29l-3-1.69z"/>
-                  </svg>
-                  Google Play
-                  <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                {app.link ? (
+                  <Button size="sm" className="w-full rounded-full bg-foreground text-background hover:bg-foreground/90 group/btn" asChild>
+                    <a href={app.link} target="_blank" rel="noopener noreferrer">
+                      <svg className="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.29-.712V2.526c0-.265.105-.521.29-.712zM14.5 12.708L17.25 15.46l-12.5 7.062L14.5 12.708zm0-1.416L4.75 3.478l12.5 7.062-2.75 2.752zM18.25 8.75l-2.75 2.75L18.25 14.25l3-1.69c.5-.28.5-1.01 0-1.29l-3-1.69z"/>
+                      </svg>
+                      Google Play
+                      <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
+                ) : (
+                  <Button size="sm" className="w-full rounded-full bg-foreground text-background hover:bg-foreground/90 group/btn">
+                    <svg className="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.29-.712V2.526c0-.265.105-.521.29-.712zM14.5 12.708L17.25 15.46l-12.5 7.062L14.5 12.708zm0-1.416L4.75 3.478l12.5 7.062-2.75 2.752zM18.25 8.75l-2.75 2.75L18.25 14.25l3-1.69c.5-.28.5-1.01 0-1.29l-3-1.69z"/>
+                    </svg>
+                    Google Play
+                    <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
+                )}
               </div>
             </motion.div>
           ))}

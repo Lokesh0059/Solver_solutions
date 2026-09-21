@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://solvererp.com'),
   title: 'Solver — Smart ERP Solutions for Every Business',
   description:
-    'Transform your business with smart ERP software. 15+ years of experience serving 500,000+ customers across 50+ countries. Business ERP, School ERP, Retail, Manufacturing & more.',
+    'Transform your business with smart ERP software. 15+ years of experience serving 50000+ customers across 50+ countries. Business ERP, School ERP, Retail, Manufacturing & more.',
   keywords: [
     'ERP software',
     'business ERP',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Solver — Smart ERP Solutions for Every Business',
     description:
-      'Transform your business with smart ERP software. 500,000+ customers across 50+ countries trust our ERP solutions.',
+      'Transform your business with smart ERP software. 50,000+ customers across 50+ countries trust our ERP solutions.',
     type: 'website',
     locale: 'en_US',
   },

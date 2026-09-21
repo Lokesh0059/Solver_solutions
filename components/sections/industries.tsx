@@ -18,7 +18,7 @@ export function Industries() {
             Industries Served
           </motion.span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-            Solutions for 126+ Industries
+            Solutions for 20+ Industries
           </h2>
           <p className="mt-4 text-muted-foreground text-lg text-balance">
             From local shops to global enterprises — our ERP adapts to your industry.

@@ -34,4 +34,5 @@ export {
   getClientLogos,
   getNavLinks,
   submitContactInquiry,
+  getContactInquiries,
 } from './queries';
