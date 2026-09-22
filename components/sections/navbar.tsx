@@ -63,7 +63,7 @@ export function Navbar() {
               </div>
             </div>
             <span className="font-heading font-bold text-xl text-foreground">
-              Solver
+              Software Solver Nepal
             </span>
           </Link>
 
